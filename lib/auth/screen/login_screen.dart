@@ -16,12 +16,25 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 36),
+      body: SingleChildScrollView(
+        child: Center(
           child: Column(
             children: [
-              SizedBox(height: 120),
+              SizedBox(
+                height: 160,
+                child: Stack(
+                  clipBehavior: Clip.none,
+                  children: [
+                    Positioned(
+                        right: 10,
+                        top: 0,
+                        child: SvgPicture.asset(Assets.imagesBox2)),
+                    Positioned(
+                        left: 0,
+                        child: SvgPicture.asset(Assets.imagesBox1)),
+                  ],
+                ),
+              ),
               LogoText(),
               SizedBox(height: 45),
               Text(
@@ -50,13 +63,16 @@ class LoginScreen extends StatelessWidget {
                 hintText: 'Password',
               ),
               SizedBox(height: 20),
-              Align(
-                alignment: Alignment.centerRight,
-                child: Text(
-                  'Forgot your password?',
-                  style: GoogleFonts.roboto(
-                    fontSize: 15,
-                    fontWeight: FontWeight.w500,
+              Padding(
+                padding: const EdgeInsets.only(right: 36),
+                child: Align(
+                  alignment: Alignment.centerRight,
+                  child: Text(
+                    'Forgot your password?',
+                    style: GoogleFonts.roboto(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
                 ),
               ),

@@ -12,24 +12,27 @@ class CustomTextFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      decoration: InputDecoration(
-        prefixIcon: icon,
-        fillColor: Color(0xffF2F2F2),
-        filled: true,
-        border: OutlineInputBorder(
-          borderSide: BorderSide(color: Color(0xffF2F2F2), width: 1),
-          borderRadius: BorderRadius.circular(4),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 36),
+      child: TextFormField(
+        decoration: InputDecoration(
+          prefixIcon: icon,
+          fillColor: Color(0xffF2F2F2),
+          filled: true,
+          border: OutlineInputBorder(
+            borderSide: BorderSide(color: Color(0xffF2F2F2), width: 1),
+            borderRadius: BorderRadius.circular(4),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: Color(0xffF2F2F2), width: 1),
+            borderRadius: BorderRadius.circular(4),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: Color(0xffF2F2F2), width: 1),
+            borderRadius: BorderRadius.circular(4),
+          ),
+          hintText: hintText,
         ),
-        enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: Color(0xffF2F2F2), width: 1),
-          borderRadius: BorderRadius.circular(4),
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: Color(0xffF2F2F2), width: 1),
-          borderRadius: BorderRadius.circular(4),
-        ),
-        hintText: hintText,
       ),
     );
   }
