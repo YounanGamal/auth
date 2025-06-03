@@ -2,8 +2,8 @@ import 'package:auth/route/page_route_name.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class DoNotHaveAnAccount extends StatelessWidget {
-  const DoNotHaveAnAccount({super.key});
+class AlreadyHaveAnAccount extends StatelessWidget {
+  const AlreadyHaveAnAccount({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +11,7 @@ class DoNotHaveAnAccount extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          'Don\'t have an account? ',
+          'Already have an account? ',
           style: GoogleFonts.roboto(
             fontSize: 16,
             fontWeight: FontWeight.w400,
@@ -19,10 +19,10 @@ class DoNotHaveAnAccount extends StatelessWidget {
         ),
         GestureDetector(
           onTap: () {
-            Navigator.pushNamed(context, PageRouteName.register);
+            Navigator.pop(context);
           },
           child: Text(
-            'Sign Up',
+            ' Login here',
             style: GoogleFonts.roboto(
               fontSize: 16,
               fontWeight: FontWeight.w700,

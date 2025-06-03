@@ -5,16 +5,19 @@ class CustomTextFormField extends StatelessWidget {
     super.key,
     required this.icon,
     required this.hintText,
+    this.obscureText,
   });
 
   final Widget icon;
   final String hintText;
+  final bool? obscureText;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 36),
       child: TextFormField(
+        obscureText: obscureText ?? false,
         decoration: InputDecoration(
           prefixIcon: icon,
           fillColor: Color(0xffF2F2F2),

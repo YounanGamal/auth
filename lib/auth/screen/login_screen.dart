@@ -17,26 +17,29 @@ class LoginScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
+        keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
         child: Center(
           child: Column(
             children: [
               SizedBox(
-                height: 160,
+                height: 140,
                 child: Stack(
                   clipBehavior: Clip.none,
                   children: [
                     Positioned(
-                        right: 10,
-                        top: 0,
-                        child: SvgPicture.asset(Assets.imagesBox2)),
+                      right: 10,
+                      top: 0,
+                      child: SvgPicture.asset(Assets.imagesBox2),
+                    ),
                     Positioned(
-                        left: 0,
-                        child: SvgPicture.asset(Assets.imagesBox1)),
+                      left: 0,
+                      child: SvgPicture.asset(Assets.imagesBox1),
+                    ),
                   ],
                 ),
               ),
               LogoText(),
-              SizedBox(height: 45),
+              SizedBox(height: 10),
               Text(
                 'Welcome back!',
                 style: GoogleFonts.roboto(
@@ -52,7 +55,7 @@ class LoginScreen extends StatelessWidget {
                   fontWeight: FontWeight.w400,
                 ),
               ),
-              SizedBox(height: 50),
+              SizedBox(height: 30),
               CustomTextFormField(
                 icon: Icon(FontAwesomeIcons.user),
                 hintText: 'Email',
@@ -61,6 +64,7 @@ class LoginScreen extends StatelessWidget {
               CustomTextFormField(
                 icon: Icon(Icons.lock_outline),
                 hintText: 'Password',
+                obscureText: true,
               ),
               SizedBox(height: 20),
               Padding(
@@ -76,9 +80,9 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 50),
+              SizedBox(height: 30),
               CustomButton(text: 'LOG IN', onTap: () {}),
-              SizedBox(height: 45),
+              SizedBox(height: 30),
               Text(
                 'Or sign up using ',
                 style: GoogleFonts.roboto(
@@ -88,7 +92,7 @@ class LoginScreen extends StatelessWidget {
               ),
               SizedBox(height: 20),
               SocialLogin(),
-              SizedBox(height: 45),
+              SizedBox(height: 20),
               DoNotHaveAnAccount(),
             ],
           ),
