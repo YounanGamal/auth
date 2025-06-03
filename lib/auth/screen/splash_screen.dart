@@ -17,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    Future.delayed(const Duration(seconds: 3), () {
+    Future.delayed(const Duration(seconds: 10), () {
       Navigator.pushReplacementNamed(context, PageRouteName.login);
     });
   }
@@ -33,17 +33,16 @@ class _SplashScreenState extends State<SplashScreen> {
             Stack(
               alignment: Alignment.center,
               children: [
-                SizedBox(height: 120),
                 SvgPicture.asset(Assets.imagesBackgroundSplash),
                 Positioned(
-                  top: 120,
+                  top: 110,
                   child: LogoText(),
                 ),
               ],
             ),
-            SizedBox(height: 53),
+            SizedBox(height: 18),
             Text(
-              'LOREM IPSUM  ',
+              'LOREM IPSUM',
               style: GoogleFonts.inter(
                 fontSize: 24,
                 fontWeight: FontWeight.w700,
